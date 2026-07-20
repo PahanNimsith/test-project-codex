@@ -358,7 +358,7 @@ input,textarea,select{font-family:inherit;}
 .studio-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:36px;}
 @media(max-width:960px){.studio-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:560px){.studio-grid{grid-template-columns:1fr 1fr;}}
-.studio-card{padding:20px 16px;background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r16);text-align:center;transition:border-color .3s,box-shadow .3s,transform .3s var(--expo);}
+.studio-card{padding:20px 16px;background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r16);text-align:center;transition:border-color .3s,box-shadow .3s,transform .3s var(--expo);}.studio-role{display:inline-flex;margin-bottom:8px;padding:3px 9px;border-radius:99px;background:var(--ac2);color:var(--ac);font-size:.62rem;font-weight:700}
 .studio-card:hover{border-color:var(--bdr2);box-shadow:0 8px 24px rgba(0,0,0,.18);transform:translateY(-4px);}
 .studio-ic{width:44px;height:44px;border-radius:50%;background:var(--ac2);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;transition:transform .4s var(--spring);}
 .studio-card:hover .studio-ic{transform:scale(1.1) rotate(-5deg);}
@@ -538,6 +538,15 @@ input,textarea,select{font-family:inherit;}
 .mic svg{width:28px;height:28px;stroke:#fff;stroke-width:2.5;fill:none;}
 .mt{font-size:1.4rem;font-weight:700;margin-bottom:9px;}
 .md{font-size:.84rem;color:var(--tx2);line-height:1.7;margin-bottom:22px;}
+
+/* ── LIGHT THEME + MOBILE REFINEMENTS ── */
+body.light{--bg:#F6F8FC;--bg2:#FFFFFF;--bg3:#EEF2F8;--bg4:#DCE4F0;--bdr:rgba(15,23,42,.08);--bdr2:rgba(15,23,42,.14);--bdr3:rgba(15,23,42,.22);--tx:#101828;--tx2:#475467;--tx3:#667085;--tx4:#98A2B3;--ac2:rgba(79,142,255,.1);--ac4:rgba(79,142,255,.05);}
+body.light .hdr{background:rgba(255,255,255,.76);}body.light .bnav{background:rgba(255,255,255,.86);}body.light .intro{background:#F6F8FC;}body.light .wimg::after{background:linear-gradient(to top,var(--bg3),transparent);}body.light .port-wrap::before{background:linear-gradient(to right,var(--bg2),transparent);}body.light .port-wrap::after{background:linear-gradient(to left,var(--bg2),transparent);}
+.theme-btn{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--tx2);border:1px solid var(--bdr);background:rgba(255,255,255,.04);transition:background .2s,color .2s,transform .2s var(--spring);}.theme-btn:hover{color:var(--ac);background:var(--ac2);transform:translateY(-1px)}.theme-btn svg{width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none}.sec-strip{display:none!important}.hdr{background:rgba(9,9,11,.68);border-bottom:1px solid var(--bdr);box-shadow:0 8px 30px rgba(0,0,0,.14)}
+@media(max-width:768px){.sec{padding:46px 0}.stats-bar{padding:20px 0}.stat-box{padding:14px 8px}.sbn{font-size:1.5rem}.sbl{font-size:.62rem}.h-stats{gap:12px;margin-top:22px}.stat-n{font-size:1.18rem}.stat-l{font-size:.58rem}.wcard{flex-basis:min(300px,74vw);scroll-snap-align:center}.wbody{padding:14px}.wdesc{display:none}.port-car{scroll-behavior:smooth;scroll-padding-inline:13vw;padding-left:13vw;padding-right:13vw}.port-wrap{margin:0 -16px}.car-ctrl{margin-top:0}.nav-links{display:none}.hire-btn{display:none}.theme-btn{display:flex}.bn{transition:color .2s,transform .32s var(--spring)}.bn.on{transform:translateY(-10px)}.bn.on svg{background:var(--ac);color:#fff;stroke:#fff;border-radius:50%;padding:5px;width:32px;height:32px;box-shadow:0 0 0 6px var(--ac2),0 8px 20px var(--ac3)}}
+.edge-fade{position:relative;overflow:hidden}.edge-fade::before,.edge-fade::after{content:'';position:absolute;top:0;bottom:0;width:64px;z-index:2;pointer-events:none}.edge-fade::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}.edge-fade::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}.test-bg .edge-fade::before{background:linear-gradient(to right,var(--bg2),transparent)}.test-bg .edge-fade::after{background:linear-gradient(to left,var(--bg2),transparent)}
+.tech-marquee{margin-top:30px}.tech-track{display:flex;gap:12px;width:max-content;animation:sweepX 24s linear infinite alternate}.tech-card{min-width:132px}.tech-card.mid{border-color:rgba(79,142,255,.42);box-shadow:0 12px 34px var(--ac3);transform:translateY(-5px)}.tech-card.mid .tech-ic{transform:scale(1.12) rotate(-3deg)}.tech-ic svg{width:28px;height:28px;stroke:currentColor;stroke-width:1.8;fill:none}.t-host{background:rgba(14,165,233,.12);color:#0EA5E9}.t-res{background:rgba(236,72,153,.12);color:#EC4899}@keyframes sweepX{from{transform:translateX(0)}to{transform:translateX(calc(-100% + min(100vw,1200px) - 48px))}}
+@media(max-width:640px){.about-grid{gap:20px}.about-vis{max-width:220px}.about-photo-w{aspect-ratio:1/1}.about-xp{margin:12px 0;gap:10px}.xp-item{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r12);padding:9px 10px;flex:1}.a-feats{grid-template-columns:1fr 1fr;margin:12px 0}.afeat{padding:12px}.afeat-d{display:none}.certs-row{display:flex;overflow-x:auto;gap:10px;scroll-snap-type:x mandatory;padding-bottom:8px}.cert-card{flex:0 0 78%;scroll-snap-align:center}.fun-row{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}.fun-tag{white-space:nowrap}.studio-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 12px;margin:24px -16px 0}.studio-card{flex:0 0 72%;scroll-snap-align:center}.studio-role{display:inline-flex;margin-bottom:8px;padding:3px 9px;border-radius:99px;background:var(--ac2);color:var(--ac);font-size:.62rem;font-weight:700}.tl-wrap{overflow:hidden;margin-top:28px}.tl-track{overflow-x:auto;scroll-snap-type:x mandatory;display:flex;gap:14px;justify-content:flex-start;padding:18px 18vw 8px;scrollbar-width:none}.tl-track::-webkit-scrollbar{display:none}.tl-track::before{top:40px;left:22%;right:auto;width:140%;height:2px}.tl-line-fill{top:40px;left:22%;height:2px;width:0}.tl-line-fill.on{width:112%;height:2px}.tl-step{flex:0 0 58%;scroll-snap-align:center;background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r16);padding:16px;flex-direction:column;gap:10px}.tl-content{text-align:center}.proc-grid{display:flex;overflow-x:auto;gap:12px;margin:24px -16px 0;padding:4px 16px 12px;scroll-snap-type:x mandatory}.pcard{flex:0 0 78%;scroll-snap-align:center;padding:20px 16px}.tgrid{position:relative}.wa-fab{animation:waGlow 2.8s ease-in-out infinite}}@keyframes waGlow{0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.25)}50%{box-shadow:0 0 0 12px rgba(37,211,102,.1),0 0 34px rgba(37,211,102,.48)}}
 @media print{.hdr,.snav,.wa-fab,.bnav,.sec-strip,.pbar,.intro,.cur-dot,.cur-ring{display:none!important;}.sec{padding:20px 0;}}
 </style>
 </head>
@@ -558,7 +567,7 @@ input,textarea,select{font-family:inherit;}
       <a href="#work">Work</a><a href="#about">About</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
     </nav>
     <div class="hdr-r">
-      <a href="#contact" class="hire-btn">Hire Me <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle light theme"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button><a href="#contact" class="hire-btn">Hire Me <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div>
@@ -680,18 +689,16 @@ input,textarea,select{font-family:inherit;}
 <section class="sec tech-bg" id="stack">
   <div class="w">
     <div class="tc rev"><div class="lbl" style="justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> Our Stack</div><h2 class="h2">Tools we master</h2><p class="dsc mx tc">We use industry-leading tools to design, build, and ship faster without cutting corners.</p></div>
-    <div class="tech-grid stag">
-      <div class="tech-card"><div class="tech-ic t-html"><svg viewBox="0 0 24 24" width="28" height="28" fill="none"><path d="M4 3l1.5 16.5L12 21l6.5-1.5L20 3H4z" stroke="#E44C2C" stroke-width="1.5"/><path d="M8 8h8l-.5 5-3.5 1-3.5-1-.25-2.5" stroke="#E44C2C" stroke-width="1.5"/></svg></div><div class="tech-nm">HTML5</div></div>
-      <div class="tech-card"><div class="tech-ic t-css"><svg viewBox="0 0 24 24" width="28" height="28" fill="none"><path d="M4 3l1.5 16.5L12 21l6.5-1.5L20 3H4z" stroke="#2159A5" stroke-width="1.5"/><path d="M8 8h8l-1 6-3 1-3-1-.5-3h2l.25 1.5L12 13l1.75-.5.25-2H8z" stroke="#2159A5" stroke-width="1.5"/></svg></div><div class="tech-nm">CSS3</div></div>
-      <div class="tech-card"><div class="tech-ic t-js"><svg viewBox="0 0 24 24" width="28" height="28"><rect x="3" y="3" width="18" height="18" rx="2" fill="#F7D000"/><text x="6" y="17" font-family="monospace" font-weight="800" font-size="9" fill="#000">JS</text></svg></div><div class="tech-nm">JavaScript</div></div>
-      <div class="tech-card"><div class="tech-ic t-fig"><svg viewBox="0 0 38 57" width="24" height="24" fill="none"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#FF7262"/></svg></div><div class="tech-nm">Figma</div></div>
-      <div class="tech-card"><div class="tech-ic t-gh"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg></div><div class="tech-nm">GitHub</div></div>
-      <div class="tech-card"><div class="tech-ic t-cur"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M4 4l7 18 3-7 7-3L4 4z"/><path d="M14 14l4 4"/></svg></div><div class="tech-nm">Cursor AI</div></div>
-      <div class="tech-card"><div class="tech-ic t-ps"><svg viewBox="0 0 24 24" width="28" height="28"><rect x="2" y="2" width="20" height="20" rx="3" fill="#31A8EA"/><text x="5.5" y="16" font-family="monospace" font-weight="800" font-size="8.5" fill="#fff">Ps</text></svg></div><div class="tech-nm">Photoshop</div></div>
-      <div class="tech-card"><div class="tech-ic t-ai"><svg viewBox="0 0 24 24" width="28" height="28"><rect x="2" y="2" width="20" height="20" rx="3" fill="#FF9A00"/><text x="5" y="16" font-family="monospace" font-weight="800" font-size="8.5" fill="#fff">Ai</text></svg></div><div class="tech-nm">Illustrator</div></div>
-      <div class="tech-card"><div class="tech-ic t-ae"><svg viewBox="0 0 24 24" width="28" height="28"><rect x="2" y="2" width="20" height="20" rx="3" fill="#8867DF"/><text x="4.5" y="16" font-family="monospace" font-weight="800" font-size="8.5" fill="#fff">Ae</text></svg></div><div class="tech-nm">After Effects</div></div>
-      <div class="tech-card"><div class="tech-ic t-db"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--ok)" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="tech-nm">Cloud DB</div></div>
-    </div>
+    <div class="tech-marquee edge-fade stag" id="techRail"><div class="tech-track">
+      <div class="tech-card"><div class="tech-ic t-html"><svg viewBox="0 0 32 32"><path d="M6 3h20l-1.8 22.2L16 29l-8.2-3.8L6 3z" fill="currentColor" opacity=".18"/><path d="M10 8h12l-.3 3H13l.2 2h8.3l-.8 8.1L16 23l-4.7-1.9-.3-3.1h3l.1.9 1.9.8 2-.8.2-2.8h-7.4L10 8z" fill="currentColor"/></svg></div><div class="tech-nm">HTML5</div></div>
+      <div class="tech-card"><div class="tech-ic t-css"><svg viewBox="0 0 32 32"><path d="M6 3h20l-1.8 22.2L16 29l-8.2-3.8L6 3z" fill="currentColor" opacity=".18"/><path d="M10 8h12l-.4 3H14l-.2 2h7.5l-.8 8.1L16 23l-4.7-1.9-.3-3h3l.1.8 1.9.8 2-.8.2-2.9h-7.5L10 8z" fill="currentColor"/></svg></div><div class="tech-nm">CSS3</div></div>
+      <div class="tech-card"><div class="tech-ic t-js"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22" rx="5" fill="currentColor" opacity=".18"/><path d="M13.4 22.1c.6.9 1.4 1.5 2.8 1.5 1.2 0 2-.6 2-1.5 0-1-1-1.4-2.6-2.1l-.7-.3c-2.5-1.1-4.1-2.4-4.1-5.2 0-2.6 2-4.6 5.1-4.6 2.2 0 3.8.8 5 2.8l-2.7 1.7c-.6-1.1-1.3-1.5-2.3-1.5s-1.7.7-1.7 1.5c0 1.1.7 1.5 2.3 2.2l.7.3c2.9 1.2 4.5 2.5 4.5 5.3 0 3-2.4 4.7-5.6 4.7-3.1 0-5.1-1.5-6.1-3.5l3.4-1.3z" fill="currentColor"/></svg></div><div class="tech-nm">JavaScript</div></div>
+      <div class="tech-card"><div class="tech-ic t-fig"><svg viewBox="0 0 32 32"><circle cx="12" cy="8" r="5" fill="#F24E1E"/><circle cx="20" cy="8" r="5" fill="#FF7262"/><circle cx="12" cy="16" r="5" fill="#A259FF"/><circle cx="20" cy="16" r="5" fill="#1ABCFE"/><circle cx="12" cy="24" r="5" fill="#0ACF83"/></svg></div><div class="tech-nm">Figma</div></div>
+      <div class="tech-card"><div class="tech-ic t-db"><svg viewBox="0 0 32 32"><ellipse cx="16" cy="8" rx="10" ry="4"/><path d="M6 8v16c0 2.2 4.5 4 10 4s10-1.8 10-4V8M6 16c0 2.2 4.5 4 10 4s10-1.8 10-4"/></svg></div><div class="tech-nm">Database</div></div>
+      <div class="tech-card"><div class="tech-ic t-host"><svg viewBox="0 0 32 32"><path d="M9 24h14a6 6 0 0 0 .8-11.9A8 8 0 0 0 8.4 14 5 5 0 0 0 9 24z"/><path d="M12 24v4M20 24v4M15 28h2"/></svg></div><div class="tech-nm">Hosting</div></div>
+      <div class="tech-card"><div class="tech-ic t-res"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="M20 20l6 6M11 14h6M14 11v6"/></svg></div><div class="tech-nm">Research</div></div>
+      <div class="tech-card"><div class="tech-ic t-gh"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.6 3.5 15.7c0 5.6 3.6 10.4 8.6 12.1.6.1.8-.3.8-.6v-2.3c-3.5.8-4.2-1.5-4.2-1.5-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.1 2 3 1.4 3.7 1.1.1-.8.4-1.4.8-1.7-2.8-.3-5.7-1.4-5.7-6.2 0-1.4.5-2.5 1.3-3.4-.1-.3-.6-1.6.1-3.3 0 0 1.1-.3 3.4 1.3a11.7 11.7 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.7 1.7.2 3 .1 3.3.8.9 1.3 2 1.3 3.4 0 4.8-2.9 5.9-5.7 6.2.5.4.9 1.2.9 2.4v3.5c0 .3.2.7.9.6a12.8 12.8 0 0 0 8.6-12.1C28.5 8.6 23 3 16 3z" fill="currentColor"/></svg></div><div class="tech-nm">GitHub</div></div>
+    </div></div>
   </div>
 </section>
 
@@ -735,12 +742,12 @@ input,textarea,select{font-family:inherit;}
         </div></div>
         <!-- Fun facts -->
         <div class="fun-row">
-          <span class="fun-tag"><span>🌙</span> Night owl coder</span>
+          <span class="fun-tag">Night owl coder</span>
           <span class="fun-tag"><span>🇱🇰</span> Sri Lanka based</span>
-          <span class="fun-tag"><span>🌍</span> Worldwide clients</span>
-          <span class="fun-tag"><span>🤖</span> AI-augmented workflow</span>
-          <span class="fun-tag"><span>✨</span> Less is more</span>
-          <span class="fun-tag"><span>⚡</span> Currently available</span>
+          <span class="fun-tag">Worldwide clients</span>
+          <span class="fun-tag">Research-led workflow</span>
+          <span class="fun-tag">Less is more</span>
+          <span class="fun-tag">Currently available</span>
         </div>
       </div>
     </div>
@@ -752,11 +759,11 @@ input,textarea,select{font-family:inherit;}
   <div class="w">
     <div class="tc rev"><div class="lbl" style="justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Our Studio</div><h2 class="h2">A team behind every project</h2><p class="dsc mx tc">ByPahan Studio is a focused creative unit. Each project is led by Pahan and executed with dedicated specialists at every stage.</p></div>
     <div class="studio-grid stag">
-      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M2 20h.01M7 20v-4"/><path d="M12 20V10"/><path d="M17 20V4"/><path d="M22 20v-8"/></svg></div><div class="studio-nm">UX Strategy</div><div class="studio-d">Research, wireframes, user flows & information architecture</div></div>
-      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><div class="studio-nm">Visual Design</div><div class="studio-d">Figma mockups, brand aesthetics & motion design</div></div>
-      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="studio-nm">Web Engineering</div><div class="studio-d">Clean HTML/CSS/JS, animation & performance optimisation</div></div>
-      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><div class="studio-nm">Cloud Infrastructure</div><div class="studio-d">Secure hosting, custom domains, daily backups & uptime</div></div>
-      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="studio-nm">Monthly Support</div><div class="studio-d">Content updates, SEO monitoring & emergency fixes</div></div>
+      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M2 20h.01M7 20v-4"/><path d="M12 20V10"/><path d="M17 20V4"/><path d="M22 20v-8"/></svg></div><div class="studio-role">Research Lead</div><div class="studio-nm">UX Strategy</div><div class="studio-d">Team discovery, wireframes, user flows & clear architecture</div></div>
+      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><div class="studio-role">UI Designer</div><div class="studio-nm">Visual Design</div><div class="studio-d">Figma mockups, brand aesthetics & motion direction</div></div>
+      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="studio-role">Frontend Dev</div><div class="studio-nm">Web Engineering</div><div class="studio-d">Clean HTML/CSS/JS, animation & performance optimisation</div></div>
+      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><div class="studio-role">Cloud Specialist</div><div class="studio-nm">Cloud Infrastructure</div><div class="studio-d">Secure hosting, custom domains, backups & uptime checks</div></div>
+      <div class="studio-card"><div class="studio-ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="studio-role">Care Manager</div><div class="studio-nm">Monthly Support</div><div class="studio-d">Content updates, SEO monitoring & emergency fixes</div></div>
     </div>
   </div>
 </section>
@@ -823,22 +830,6 @@ input,textarea,select{font-family:inherit;}
   </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
-<section class="sec faq-bg" id="faq">
-  <div class="w">
-    <div class="tc rev"><div class="lbl" style="justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> FAQ</div><h2 class="h2">Questions answered</h2></div>
-    <div class="faq-list" id="faqList">
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">How long does it take to build my website?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Most sites are live within 3–5 days. A landing page can go live in 48 hours. Larger 8-page sites take about 7 days. I'll give you a specific timeline in our first call.</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">What's included in the price?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Design, development, content writing, image sourcing, animations, contact forms, mobile optimisation, and basic SEO setup. Everything to make your site look and work professionally from day one.</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Do you handle domain and hosting?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Yes. I manage everything — buying your domain, deploying to our secure cloud infrastructure, and connecting it all. You don't need to touch a single technical setting.</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Can I update the website myself after launch?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">You can — but most clients prefer to just WhatsApp me changes since I turn them around the same day. On monthly plans, unlimited updates are included so you never need to touch code.</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">How do payments work?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">50% upfront to start, 50% on launch. For monthly plans, billed at the start of each month. Sri Lankan bank transfer, or international payment via PayPal/Wise.</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Do you work with international clients?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Absolutely. I work with clients across the UK, Australia, Singapore, UAE, and more. Everything is handled over WhatsApp, email, and video call — location is no barrier.</div></div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">What if I want changes after launch?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Revisions during the build are unlimited. After launch, small changes (text, photos) are free for 7 days. After that, join a monthly plan or pay per-change — no hidden fees, always transparent.</div></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══ CONTACT ═══ -->
 <section class="sec contact-sec" id="contact">
   <div class="w">
@@ -863,6 +854,22 @@ input,textarea,select{font-family:inherit;}
         <div class="fg"><label class="fl" for="cMsg">Tell me about your project</label><textarea class="fi ta" id="cMsg" placeholder="What does your business do? Any styles you like?"></textarea></div>
         <button type="submit" class="fsub">Send Message <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
       </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="sec faq-bg" id="faq">
+  <div class="w">
+    <div class="tc rev"><div class="lbl" style="justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> FAQ</div><h2 class="h2">Questions answered</h2></div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">How long does it take to build my website?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Most sites are live within 3–5 days. A landing page can go live in 48 hours. Larger 8-page sites take about 7 days. I'll give you a specific timeline in our first call.</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">What's included in the price?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Design, development, content writing, image sourcing, animations, contact forms, mobile optimisation, and basic SEO setup. Everything to make your site look and work professionally from day one.</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Do you handle domain and hosting?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Yes. I manage everything — buying your domain, deploying to our secure cloud infrastructure, and connecting it all. You don't need to touch a single technical setting.</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Can I update the website myself after launch?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">You can — but most clients prefer to just WhatsApp me changes since I turn them around the same day. On monthly plans, unlimited updates are included so you never need to touch code.</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">How do payments work?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">50% upfront to start, 50% on launch. For monthly plans, billed at the start of each month. Sri Lankan bank transfer, or international payment via PayPal/Wise.</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Do you work with international clients?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Absolutely. I work with clients across the UK, Australia, Singapore, UAE, and more. Everything is handled over WhatsApp, email, and video call — location is no barrier.</div></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">What if I want changes after launch?</span><div class="faq-ic"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Revisions during the build are unlimited. After launch, small changes (text, photos) are free for 7 days. After that, join a monthly plan or pay per-change — no hidden fees, always transparent.</div></div></div>
     </div>
   </div>
 </section>
@@ -1199,6 +1206,49 @@ window.closeCert=function(){
   document.body.style.overflow='';
 };
 
+
+/* ── Theme toggle ── */
+const themeBtn=document.getElementById('themeBtn');
+const savedTheme=localStorage.getItem('bpTheme');
+if(savedTheme==='light') document.body.classList.add('light');
+if(themeBtn) themeBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('light');
+  localStorage.setItem('bpTheme',document.body.classList.contains('light')?'light':'dark');
+});
+
+/* ── Soft auto rails + centered highlights ── */
+function centerPulse(rootSel,itemSel){
+  const root=document.querySelector(rootSel);
+  if(!root) return;
+  const items=[...root.querySelectorAll(itemSel)];
+  function mark(){
+    const mid=root.getBoundingClientRect().left+root.offsetWidth/2;
+    let best=null,dist=Infinity;
+    items.forEach(it=>{const r=it.getBoundingClientRect();const d=Math.abs((r.left+r.width/2)-mid);if(d<dist){dist=d;best=it;}});
+    items.forEach(it=>it.classList.toggle('mid',it===best));
+  }
+  mark();root.addEventListener('scroll',mark,{passive:true});window.addEventListener('resize',mark);
+}
+centerPulse('#techRail','.tech-card');
+centerPulse('#portCar','.wcard');
+
+function autoScrollRail(el,step=1){
+  if(!el) return;
+  let dir=1,paused=false,timer;
+  const pause=()=>{paused=true;clearTimeout(timer);timer=setTimeout(()=>paused=false,5000);};
+  ['touchstart','wheel','pointerdown'].forEach(ev=>el.addEventListener(ev,pause,{passive:true}));
+  function tick(){
+    if(!paused){
+      el.scrollLeft+=dir*step;
+      if(el.scrollLeft+el.clientWidth>=el.scrollWidth-2) dir=-1;
+      if(el.scrollLeft<=2) dir=1;
+    }
+    requestAnimationFrame(tick);
+  }
+  tick();
+}
+if(window.innerWidth<=768){autoScrollRail(portCar,.45);autoScrollRail(document.getElementById('tlTrack'),.38);}
+
 /* ── Escape key ── */
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){closeModal();closeCert();closeSnav();}
@@ -1230,7 +1280,7 @@ function setAct(id){
   stabs.forEach(t=>t.classList.toggle('on',t.dataset.sec===id));
   bnItems.forEach(b=>{
     b.classList.toggle('on',b.dataset.sec===id);
-    b.querySelector('.bn-pip').style.display=(b.dataset.sec===id?'block':'none');
+    const pip=b.querySelector('.bn-pip');if(pip)pip.style.display=(b.dataset.sec===id?'block':'none');
   });
   navAs.forEach(a=>{
     const h=a.getAttribute('href').replace('#','');
