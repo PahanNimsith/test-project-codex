@@ -265,8 +265,8 @@ input,textarea,select{font-family:inherit;}
 @media(max-width:640px){.port-wrap{margin:0 -16px;}}
 .port-wrap::before{content:'';position:absolute;top:0;left:0;width:50px;bottom:28px;background:linear-gradient(to right,var(--bg2),transparent);pointer-events:none;z-index:2;}
 .port-wrap::after{content:'';position:absolute;top:0;right:0;width:80px;bottom:28px;background:linear-gradient(to left,var(--bg2),transparent);pointer-events:none;z-index:2;}
-.port-car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 24px 20px;}
-@media(max-width:640px){.port-car{padding:6px 16px 20px;}}
+.port-car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 24px 20px;scroll-behavior:smooth;}
+@media(max-width:640px){.port-car{padding:6px calc(50vw - 170px) 20px;}}
 .port-car::-webkit-scrollbar{display:none;}
 .wcard{flex:0 0 min(370px,82vw);scroll-snap-align:start;background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r20);overflow:hidden;transition:transform .35s var(--expo),box-shadow .35s,border-color .35s;cursor:pointer;}
 @media(max-width:768px){.wcard{transition:transform .3s var(--expo),box-shadow .3s;}.wcard.centered{transform:scale(1.035);box-shadow:0 20px 50px rgba(0,0,0,.35);z-index:1;}}
@@ -1130,7 +1130,9 @@ if(portCar){
     const n=getDotCount();
     cur=Math.max(0,Math.min(idx,n-1));
     const kw=cards[0]?cards[0].offsetWidth+18:388;
-    portCar.scrollTo({left:cur*kw,behavior:'smooth'});
+    const isMobile=window.innerWidth<=768;
+    const centerOffset=isMobile?(portCar.offsetWidth/2 - cards[0].offsetWidth/2):0;
+    portCar.scrollTo({left:cur*kw+centerOffset,behavior:'smooth'});
     updateDots();
   }
   function resetAuto(){
@@ -1149,7 +1151,10 @@ if(portCar){
   portCar.addEventListener('scroll',()=>{
     clearTimeout(scTO);scTO=setTimeout(()=>{
       const kw=cards[0]?cards[0].offsetWidth+18:388;
-      cur=Math.round(portCar.scrollLeft/kw);updateDots();
+      const isMobile=window.innerWidth<=768;
+      const centerOffset=isMobile?(portCar.offsetWidth/2 - cards[0].offsetWidth/2):0;
+      cur=Math.round((portCar.scrollLeft-centerOffset)/kw);
+      updateDots();
     },80);
   },{passive:true});
   buildDots();resetAuto();
