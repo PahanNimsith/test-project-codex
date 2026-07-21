@@ -118,7 +118,10 @@ input,textarea,select{font-family:inherit;}
 .menu-btn{display:none;width:38px;height:38px;align-items:center;justify-content:center;border-radius:var(--r8);color:var(--tx);transition:background .2s;}
 .menu-btn:hover{background:var(--bg3);}
 .menu-btn svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none;}
-@media(max-width:768px){.nav-links,.hire-btn,#themeBtn{display:none;}.menu-btn{display:flex;}}
+.theme-toggle{display:flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:var(--r8);color:var(--tx);transition:background .2s;}
+.theme-toggle:hover{background:var(--bg3);}
+.theme-toggle svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;}
+@media(max-width:768px){.nav-links,.hire-btn{display:none;}.theme-toggle,.menu-btn{display:flex;}}
 /* slide nav */
 .snav{position:fixed;inset:0;z-index:950;display:none;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s;}
 .snav.open{opacity:1;pointer-events:all;}
@@ -567,7 +570,7 @@ input,textarea,select{font-family:inherit;}
       <a href="#work">Work</a><a href="#about">About</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
     </nav>
     <div class="hdr-r">
-      <button class="menu-btn" id="themeBtn" aria-label="Toggle Theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme"><svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="moon-icon" viewBox="0 0 24 24" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
       <a href="#contact" class="hire-btn">Hire Me <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
@@ -969,9 +972,11 @@ snav.querySelectorAll('.snav-link,.snav-cta').forEach(l=>l.addEventListener('cli
 /* ── Theme toggle ── */
 const THEME_KEY='bypahan_theme';
 let curTheme=localStorage.getItem(THEME_KEY)||'dark';
+const sunIcon=document.querySelector('.sun-icon');
+const moonIcon=document.querySelector('.moon-icon');
 function setTheme(t){
-  if(t==='light'){document.documentElement.setAttribute('data-theme','light');curTheme='light';}
-  else{document.documentElement.removeAttribute('data-theme');curTheme='dark';}
+  if(t==='light'){document.documentElement.setAttribute('data-theme','light');curTheme='light';if(sunIcon)sunIcon.style.display='none';if(moonIcon)moonIcon.style.display='block';}
+  else{document.documentElement.removeAttribute('data-theme');curTheme='dark';if(sunIcon)sunIcon.style.display='block';if(moonIcon)moonIcon.style.display='none';}
   localStorage.setItem(THEME_KEY,curTheme);
 }
 setTheme(curTheme);
